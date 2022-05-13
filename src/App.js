@@ -1,10 +1,13 @@
-import Header from './components/Header'
-import Button from './Button';
+
 
 function App() {
+
+  
   return (
     <div className="App">
-      <Header/>
+      <div className="App content">
+         <h1>Hello Kili</h1>
+      </div>
     </div>
   );
 }
