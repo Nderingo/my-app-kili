@@ -1,12 +1,16 @@
 
+import Navbar from './components/Navbar'
+import Home from './components/Home'
 
 function App() {
 
   
   return (
     <div className="App">
+      
+      <Navbar/>
       <div className="App content">
-         <h1>Hello Kili</h1>
+      <Home/>
       </div>
     </div>
   );
