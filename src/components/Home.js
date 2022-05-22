@@ -1,6 +1,12 @@
 import { useState } from 'react';
+import BlogList from './BlogList';
 
-const Home = () => {
+const Home = () =>  {
+        const [blogs, setBlogs] = useState([
+          { title: 'The Ngorongoro Crator', body: 'lorem ipsum...', author: 'Emmanuel', id: 1 },
+          { title: 'The Mighty Serengeti!', body: 'lorem ipsum...', author: 'Lyimo', id: 2 },
+          { title: 'Mount Kilimanjaro', body: 'lorem ipsum...', author: 'Emmanuel', id: 3 }
+        ])
 
 const [name,setName] = useState('Ngorongoro');
 const [number,setNumber] = useState(1)
@@ -15,6 +21,8 @@ const [number,setNumber] = useState(1)
     //   }
     return (
         <div className="home">
+            <BlogList blogs={blogs} title='All Blogs'/>
+            <BlogList blogs={blogs.filter((blog)=>blog.author==='Emmanuel')} title='Emmanuel Blogs'/>
             <h2>Homepage</h2>
             <p>{ name } is { number } National Park in the World!!</p>
             <button onClick={handleClick}>Click me</button>
