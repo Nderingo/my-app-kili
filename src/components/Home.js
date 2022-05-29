@@ -19,9 +19,14 @@ const [number,setNumber] = useState(1)
     // const handleClickAgain = (name, e) => {
     //     console.log('Hakuna ' +name, e.target);
     //   }
+
+    const handleDelete = (id) =>{
+        const newBlogs = blogs.filter(blog => blog.id !== id);
+        setBlogs(newBlogs);
+    }
     return (
         <div className="home">
-            <BlogList blogs={blogs} title='All Blogs'/>
+            <BlogList blogs={blogs} title='All Blogs' handleDelete = {handleDelete}/>
             <BlogList blogs={blogs.filter((blog)=>blog.author==='Emmanuel')} title='Emmanuel Blogs'/>
             <h2>Homepage</h2>
             <p>{ name } is { number } National Park in the World!!</p>
